@@ -5,8 +5,8 @@
 
 	$id = $_POST['id'];
 	removeProduto($conexao, $id);
-	
-	header ("Location: visualizar-produto.php?removido = true");
+	$_SESSION["success"] = "Produto removido com sucesso.";
+	header ("Location: visualizar-produto.php");
 	Die();
 	?>
 	

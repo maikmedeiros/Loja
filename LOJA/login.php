@@ -4,9 +4,11 @@
 
 	  	$usuario = buscaUsuarios($conexao, $_POST["email"], $_POST["senha"]);
 	 	if($usuario == null) {
-		    header("Location: index.php?login=0");
+        $_SESSION["danger"] = "Usuário ou Senha Invalida.";
+		    header("Location: index.php");
 		} else {
 		   logaUsuario($usuario["email"]);
+      $_SESSION["success"] = "Usuário logado com sucesso.";
 		   header("Location: index.php?login=1");
 		    
 		}

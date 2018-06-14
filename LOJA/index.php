@@ -10,22 +10,19 @@
 			<?php } ?>
 			
 			<?php 
-				if(isset($_GET["login"]) && $_GET["login"]==false){
+				if(isset($_SESSION["success"]){
 			?>
-				<p class="alert-danger">Erro de Login.</p>
-			<?php } ?>
-			
+				<p class="alert-success"><?= $_SESSION["success"] ?></p>
+			<?php 
+       unsset($_SESSION["success"]);
+        } 
+       ?>
 			<?php
-				if(isset($_GET["logout"]) && $_GET["logout"]==true){
+				if (isset($_SESSION["danger"])){
 			?>
-				<p class="alert-success">Você se deslogou com sucesso.</p>
-			<?php } ?>
-			
-			<?php
-				if (isset($_GET["falhaDeSegurança"])){
-			?>
-				<p class="alert-danger">Você não tem permissão para acessar essas funções.</p>
+				<p class="alert-danger"><?= $_SESSION["danger"] ?></p>
 			<?php		
+        unsset($_SESSION["danger"]);
 				}
 			?>
 			
