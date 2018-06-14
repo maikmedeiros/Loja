@@ -12,7 +12,7 @@
 			<?php 
 				if(isset($_GET["login"]) && $_GET["login"]==false){
 			?>
-				<p class="alert-danger">Erro de Login</p>
+				<p class="alert-danger">Erro de Login.</p>
 			<?php } ?>
 			
 			<?php
