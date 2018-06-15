@@ -7,9 +7,9 @@
         $_SESSION["danger"] = "Usuário ou Senha Invalida.";
 		    header("Location: index.php");
 		} else {
-		   logaUsuario($usuario["email"]);
-      $_SESSION["success"] = "Usuário logado com sucesso.";
-		   header("Location: index.php?login=1");
+		   	logaUsuario($usuario["email"]);
+      		$_SESSION["success"] = "Usuário logado com sucesso.";
+		  	header("Location: index.php?login=1");
 		    
 		}
 		die();

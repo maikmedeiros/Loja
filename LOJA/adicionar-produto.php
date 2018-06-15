@@ -5,7 +5,8 @@
 		<?php
 			
 			verificaUsuario();
-
+			
+			
 			$nome = $_POST["nome"];
 			$preco = $_POST["preco"];
 			$descricao = $_POST["descricao"];

@@ -10,19 +10,20 @@
 			<?php } ?>
 			
 			<?php 
-				if(isset($_SESSION["success"]){
+				if(isset($_SESSION["success"])){
 			?>
 				<p class="alert-success"><?= $_SESSION["success"] ?></p>
-			<?php 
-       unsset($_SESSION["success"]);
-        } 
-       ?>
+			<?php
+				unset($_SESSION["success"]); 
+			     } 
+			     
+		     ?>
 			<?php
 				if (isset($_SESSION["danger"])){
 			?>
 				<p class="alert-danger"><?= $_SESSION["danger"] ?></p>
 			<?php		
-        unsset($_SESSION["danger"]);
+       			unset($_SESSION["danger"]);
 				}
 			?>
 			

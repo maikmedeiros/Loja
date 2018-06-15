@@ -1,13 +1,15 @@
-<?php
-	include("cabecalho.php");
-	include("conecta.php");
-	include("banco-produto.php");
-  include("logica-usuario.php");
- 	$produtos = listaProduto($conexao);
-?>
-	<?php if(isset($_SESSION["success"]){ ?>
-		<p class="alert-success"><?= $_SESSION["success"] =></p>
-	<?php } ?>
+	<?php
+		include("cabecalho.php");
+		include("conecta.php");
+		include("banco-produto.php");
+	  	include("logica-usuario.php");
+	 	$produtos = listaProduto($conexao);
+	?>
+	<?php if(isset($_SESSION["success"])){ ?>
+		<p class="alert-success"> <?= $_SESSION["success"] ?></p>
+	<?php 
+		unset($_SESSION["success"]);
+		} ?>
 	
 	<table class="table table-striped table-bordered">
 		<tr>
