@@ -1,4 +1,9 @@
-
+<?php
+        include("mostra-alerta.php");
+        mostraAlerta("success");
+        mostraAlerta("danger");
+        error_reporting (E_ALL ^ E_NOTICE);
+?>
 <html>
 	<head>
 		<title>Minha Loja</title>
