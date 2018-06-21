@@ -1,13 +1,10 @@
 <?php 
 	include("cabecalho.php"); 
-  include("mostra-alerta.php");
+	include("logica-usuario.php");
 ?>
 			<h1>Bem vindo!</h1> 
-      <?php
-        mostraAlerta("success");
-        mostraAlerta("danger");
-      ?>
-      <?php
+
+      		<?php
 				if(usuarioEstaLogado()){
 			?>
 				<a href="logout.php">Deslogar</a></p>	
