@@ -1,18 +1,16 @@
 	<?php
-    if($_REQUEST["excel" == "true"]{
+		include("cabecalho.php");
+		include("conecta.php");
+		include("banco-produto.php");
+	 	$produtos = listaProduto($conexao);
+    
+    if($_REQUEST["excel" == "true"]){
       header("Content-type: application/vnd.ms-excel");
       header("Content-type: application/force-download");
       header("Content-Disposition: attachment; filename=arquivo.xls");
       header("Pragma: no-cache");
-    } else {
-		include("cabecalho.php");
-		include("conecta.php");
-		include("banco-produto.php");
-    include("mostra-alerta.php");
-	 	$produtos = listaProduto($conexao);
     }
 	?>
-  <!-- http://www.tiagomatos.com/blog/exportando-dados-tabulares-html-em-arquivo-do-excel -->
 	<table class="table table-striped table-bordered">
 		<tr>
 				<td>Id</td>
@@ -41,8 +39,8 @@
   <?php
     if($_REQUEST <> "true"){
   ?>
-  <form action="/?excel=true">
-    <input type="submit" value="Gerar em Excel"  
+  <form action=visualizar-produto.php/?excel==true">
+    <input type="submit" value="Gerar em Excel">
   </form>
 <?php include("rodape.php");?>
 <?php   }  ?>
