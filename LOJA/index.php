@@ -32,6 +32,7 @@
 			<?php
 			}
 			?>
-
-           
+      
+      
+      
 <?php include("rodape.php"); ?>

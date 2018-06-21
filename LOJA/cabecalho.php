@@ -22,7 +22,7 @@
 						<ul class="nav navbar-nav">
 							<li><a href="formulario-cadastro.php">ADICIONAR PRODUTO</a></li>
 							<li><a href="visualizar-produto.php">VISUALIZAR PRODUTO</a></li>
-							<li><a haref="sobre.php">SOBRE</a></li>
+							<li><a href="sobre.php">SOBRE</a></li>
 						</ul>
 					</div>
 				</div>
