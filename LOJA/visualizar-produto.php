@@ -1,15 +1,19 @@
 	<?php
-		include("cabecalho.php");
-		include("conecta.php");
-		include("banco-produto.php");
-	 	$produtos = listaProduto($conexao);
-    
-    if($_REQUEST["excel" == "true"]){
+    if($_REQUEST["excel"] == "true"){
       header("Content-type: application/vnd.ms-excel");
       header("Content-type: application/force-download");
       header("Content-Disposition: attachment; filename=arquivo.xls");
       header("Pragma: no-cache");
+    }else{
+      include("cabecalho.php");
     }
+
+
+		include("conecta.php");
+		include("banco-produto.php");
+	 	$produtos = listaProduto($conexao);
+    
+
 	?>
 	<table class="table table-striped table-bordered">
 		<tr>
@@ -37,9 +41,9 @@
 	<?php endforeach?>
 	</table>
   <?php
-    if($_REQUEST <> "true"){
+    if($_REQUEST["excel"] <> "true"){
   ?>
-  <form action=visualizar-produto.php/?excel==true">
+  <form action=/?excel==true">
     <input type="submit" value="Gerar em Excel">
   </form>
 <?php include("rodape.php");?>
