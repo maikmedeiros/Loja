@@ -1,5 +1,5 @@
 <?php 
-	
+	include("conecta.php"); 
 	// SELECIONAR PRODUTOS DO BANCO
 	function listaProduto($conexao){
 		$produtos = array();

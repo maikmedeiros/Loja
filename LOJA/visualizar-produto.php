@@ -43,7 +43,7 @@
   <?php
     if($_REQUEST["excel"] <> "true"){
   ?>
-  <form action=/?excel==true">
+  <form action="/?excel==true">
     <input type="submit" value="Gerar em Excel">
   </form>
 <?php include("rodape.php");?>

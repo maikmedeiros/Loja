@@ -1,5 +1,5 @@
 <?php
-        include("mostra-alerta.php");
+        require_once("mostra-alerta.php");
         mostraAlerta("success");
         mostraAlerta("danger");
         error_reporting (E_ALL ^ E_NOTICE);
