@@ -23,7 +23,7 @@
 							<li><a href="formulario-cadastro.php">ADICIONAR PRODUTO</a></li>
 							<li><a href="visualizar-produto.php">VISUALIZAR PRODUTO</a></li>
 							<li><a href="sobre.php">SOBRE</a></li>
-              <li><a href="sobre.php">CONTATO</a></li>
+              <li><a href="contato.php">CONTATO</a></li>
 						</ul>
 					</div>
 				</div>

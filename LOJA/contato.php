@@ -4,19 +4,19 @@
    <table>
       <tr>
         <td> Nome: </td>
-        <td> <input class="form-control" type="text" name="nome" value="nome" </td>
+        <td> <input class="form-control" type="text" name="nome" value="nome" /> </td>
       </tr> 
       <tr>
         <td> Sobrenome: </td>
-        <td><input class="form-control" type="text" name="sobrenome" value="sobrenome" </td>
+        <td><input class="form-control" type="text" name="sobrenome" value="sobrenome" /> </td>
       </tr>
       <tr>
           <td>E-mail:</td>
-          <td><input class="form-control" type="text" name="email" value="E-mail"</td>
+          <td><input class="form-control" type="text" name="email" value="E-mail" /></td>
       </tr>
       <tr>
           <td>Descrição:</td>
-          <td><textarea class="form-control" name="descricao" value="desricao"</td>
+          <td><textarea class="form-control" name="descricao"</td></textarea>
       </tr>  
      <tr>
       <td><button type="submit" class="btn btn-primary"> Enviar</button></td>

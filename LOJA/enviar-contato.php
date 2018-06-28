@@ -14,7 +14,7 @@
   $mail->SMTPSecure = 'tls';
   $mail->SMTPAuth = true;
   $mail->Username = "maikmedeirosm@gmail.com";
-  $mail->Password = "Fl@m3ng093";
+  $mail->Password = "";
 
   $mail->setFrom("maikmedeirosm@gmail.com", "Alura Curso PHP e MySQL");
   $mail->addAddress("maikmedeirosm@gmail.com");
