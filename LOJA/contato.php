@@ -1,18 +1,18 @@
 <?php require_once ("cabecalho.php"); ?>
  
- <form action ="enviar-contato.php" method="POST">
-   <table>
+ <form action ="enviar-contato.php" method="POST" >
+   <table class="table">
       <tr>
         <td> Nome: </td>
-        <td> <input class="form-control" type="text" name="nome" value="nome" /> </td>
+        <td> <input class="form-control" type="text" name="nome" value="" /> </td>
       </tr> 
       <tr>
         <td> Sobrenome: </td>
-        <td><input class="form-control" type="text" name="sobrenome" value="sobrenome" /> </td>
+        <td><input class="form-control" type="text" name="sobrenome" value="" /> </td>
       </tr>
       <tr>
           <td>E-mail:</td>
-          <td><input class="form-control" type="text" name="email" value="E-mail" /></td>
+          <td><input class="form-control" type="text" name="email" value="" /></td>
       </tr>
       <tr>
           <td>Descrição:</td>

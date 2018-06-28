@@ -1,20 +1,22 @@
 <?php
-  require_onde("OAuth.php");  
+  session_start(); 
 
   $nome = $_POST["nome"];
   $sobrenome = $_POST["sobrenome"];
   $email = $_POST["email"];
   $descricao = $_POST["descricao"];
   
+  require_once("PHPMailerAutoload.php"); 
+  
   $mail = new PHPMailer();
   
   $mail->isSMTP();
-  $mail->Host = 'smtp.gmail.com';
+  $mail->Host = "smtp.gmail.com";
   $mail->Port = 587;
-  $mail->SMTPSecure = 'tls';
+  $mail->SMTPSecure = 'TLS';
   $mail->SMTPAuth = true;
-  $mail->Username = "maikmedeirosm@gmail.com";
-  $mail->Password = "";
+  $mail->Username = "maik.moreira@escolamobile.com.br";
+  $mail->Password = "Flamengo1";
 
   $mail->setFrom("maikmedeirosm@gmail.com", "Alura Curso PHP e MySQL");
   $mail->addAddress("maikmedeirosm@gmail.com");
