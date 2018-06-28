@@ -8,7 +8,7 @@
 			</tr>
 			<tr>
 				<td>Descrição</td>
-            	<td><textarea name="descricao" class="form-control"><?=$produto['descricao']?></textarea>
+            <td><textarea name="descricao" class="form-control"><?=$produto['descricao']?></textarea>
 			</tr>
 			<tr>
         		<td>Categoria:</td>
