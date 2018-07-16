@@ -1,5 +1,7 @@
 <?php 
-	include("conecta.php"); 
+	include("conecta.php");
+  require_once("class/produto.php");
+
 	// SELECIONAR PRODUTOS DO BANCO
 	function listaProduto($conexao){
 		$produtos = array();

@@ -2,7 +2,8 @@
 		<?php require_once("banco-produto.php");?>
 		<?php require_once("logica-usuario.php");?>
     <?php require_once("class/produto.php"); ?>
-		<?php
+		
+   <?php
 			
 			verificaUsuario();
 			
@@ -16,9 +17,9 @@
 			} else {
 	  			 $produto->usado = "false";
 			}
-						
+		  
 			if (insereProduto($conexao, $produto)){ ?>
-				<p class="text-sucess">O produto <?= $produto->nome?> foi adicionado com sucesso e seu preço é <?= $preco?>!!!</p>
+				<p class="text-sucess">O produto <?= $produto->nome?> foi adicionado com sucesso e seu preço é <?= $produto->preco?>!!!</p>
 
 				<?php } else { 
 						$msg = mysqli_error($conexao);?>
@@ -27,3 +28,4 @@
 				}
 		?>
 	<?php include("rodape.php"); ?>
+
