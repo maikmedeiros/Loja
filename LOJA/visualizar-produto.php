@@ -1,12 +1,9 @@
 	<?php
-    
     include("cabecalho.php");
     include("conecta.php");
 		include("banco-produto.php");
 	 	$produtos = listaProduto($conexao);
-    
-
-	?>
+  ?>
 	<table class="table table-striped table-bordered">
 		<tr>
 				<td>Id</td>
@@ -17,7 +14,7 @@
 		</tr>
 	<?php foreach($produtos as $produto) : ?>
 		<tr>
-			<td><?= $produto['id'] ?></td>
+			    <td><?= $produto['id'] ?></td>
 	        <td><?= $produto['nome'] ?></td>
 	        <td><?= $produto['preco'] ?></td>
 	        <td><?= substr($produto['descricao'], 0,40	) ?></td>
