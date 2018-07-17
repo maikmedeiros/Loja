@@ -1,13 +1,14 @@
 		<?php require_once("cabecalho.php"); ?>
 		<?php require_once("banco-produto.php");?>
 		<?php require_once("logica-usuario.php");?>
-    <?php require_once("class/produto.php"); ?>
+    <?php require_once("class/Produto.php"); ?>
 		
    <?php
 			
 			verificaUsuario();
 			
 			$produto = new Produto();
+
 			$produto->nome = $_POST["nome"];
 			$produto->preco = $_POST["preco"];
 			$produto->descricao = $_POST["descricao"];
