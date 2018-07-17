@@ -1,15 +1,7 @@
 	<?php
-    if($_REQUEST["excel"] == "true"){
-      header("Content-type: application/vnd.ms-excel");
-      header("Content-type: application/force-download");
-      header("Content-Disposition: attachment; filename=arquivo.xls");
-      header("Pragma: no-cache");
-    }else{
-      include("cabecalho.php");
-    }
 
-
-		include("conecta.php");
+      	include("cabecalho.php");
+    	include("conecta.php");
 		include("banco-produto.php");
 	 	$produtos = listaProduto($conexao);
     
@@ -23,7 +15,7 @@
 				<td>Descrição</td>
 				<td>Categoria</td>
 		</tr>
-	<?php foreach($produtos as $produto) : ?>
+			<?php foreach($produtos as $produto) : ?>
 		<tr>
 			<td><?= $produto['id'] ?></td>
 	        <td><?= $produto['nome'] ?></td>
@@ -43,9 +35,7 @@
   <?php
     if($_REQUEST["excel"] <> "true"){
   ?>
-  <form action="/?excel==true">
     <input type="submit" value="Gerar em Excel">
-  </form>
-<?php include("rodape.php");?>
+  </form><?php include("rodape.php");?>
 <?php   }  ?>
 	

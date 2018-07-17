@@ -12,9 +12,11 @@
 	}
 
 	// INSERIR PRODUTO NO BANCO 
-	function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado){
-			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$nome}', {$preco}, '{$descricao}',{$categoria_id},{$usado})";
+	function insereProduto($conexao,Produto $produto){
+			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->nome}', {$produto->preco}, '{$produto->descricao}',{$produto->categoria_id},{$produto->usado})";
 			echo $query;
+			var_dump($query);
+			print_r($query);
 			return  mysqli_query($conexao, $query);
 	}
 
