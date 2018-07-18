@@ -30,5 +30,5 @@
 	<?php endforeach?>
 	</table>
 <?php include("rodape.php");?>
-<?php   }  ?>
+
 	
