@@ -1,12 +1,9 @@
 	<?php
-
-      	include("cabecalho.php");
-    	include("conecta.php");
+    include("cabecalho.php");
+    include("conecta.php");
 		include("banco-produto.php");
 	 	$produtos = listaProduto($conexao);
-    
-
-	?>
+  ?>
 	<table class="table table-striped table-bordered">
 		<tr>
 				<td>Id</td>
@@ -15,9 +12,9 @@
 				<td>Descrição</td>
 				<td>Categoria</td>
 		</tr>
-			<?php foreach($produtos as $produto) : ?>
+	<?php foreach($produtos as $produto) : ?>
 		<tr>
-			<td><?= $produto['id'] ?></td>
+			    <td><?= $produto['id'] ?></td>
 	        <td><?= $produto['nome'] ?></td>
 	        <td><?= $produto['preco'] ?></td>
 	        <td><?= substr($produto['descricao'], 0,40	) ?></td>
@@ -32,10 +29,6 @@
 	    </tr>
 	<?php endforeach?>
 	</table>
-  <?php
-    if($_REQUEST["excel"] <> "true"){
-  ?>
-    <input type="submit" value="Gerar em Excel">
-  </form><?php include("rodape.php");?>
-<?php   }  ?>
+<?php include("rodape.php");?>
+
 	

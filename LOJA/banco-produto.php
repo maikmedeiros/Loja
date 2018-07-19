@@ -1,5 +1,6 @@
 <?php 
-	include("conecta.php"); 
+	include("conecta.php");
+
 	// SELECIONAR PRODUTOS DO BANCO
 	function listaProduto($conexao){
 		$produtos = array();
@@ -12,11 +13,9 @@
 	}
 
 	// INSERIR PRODUTO NO BANCO 
-	function insereProduto($conexao,Produto $produto){
+	function insereProduto($conexao, Produto $produto){
 			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->nome}', {$produto->preco}, '{$produto->descricao}',{$produto->categoria_id},{$produto->usado})";
 			echo $query;
-			var_dump($query);
-			print_r($query);
 			return  mysqli_query($conexao, $query);
 	}
 
@@ -35,8 +34,8 @@
 	}
 
 	//UPDATE PRODUTOS
-	function alteraProdutos($conexao,$id,$nome, $preco, $descricao, $categoria_id, $usado){
-		$query = "update produtos set nome = '{$nome}', preco = {$preco}, descricao = '{$descricao}', categoria_id = {$categoria_id}, usado = {$usado} where id = {$id}";
+	function alteraProdutos($conexao,Produto $produto){
+		$query = "update produtos set nome = '{$produto->nome}', preco = {$produto->preco}, descricao = '{$produto->descricao}', categoria_id = {$produto->categoria_id}, usado = {$produto->usado} where id = {$produto->id}";
 		echo $query;
 		return mysqli_query($conexao, $query);
 	}

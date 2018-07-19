@@ -6,7 +6,7 @@
   $email = $_POST["email"];
   $descricao = $_POST["descricao"];
   
-  require_once("PHPMailerAutoload.php"); 
+  require_once("PHPMailer/PHPMailerAutoload.php"); 
   
   $mail = new PHPMailer();
   
@@ -16,7 +16,7 @@
   $mail->SMTPSecure = 'TLS';
   $mail->SMTPAuth = true;
   $mail->Username = "maik.moreira@escolamobile.com.br";
-  $mail->Password = "Flamengo1";
+  $mail->Password = "";
 
   $mail->setFrom("maikmedeirosm@gmail.com", "Alura Curso PHP e MySQL");
   $mail->addAddress("maikmedeirosm@gmail.com");

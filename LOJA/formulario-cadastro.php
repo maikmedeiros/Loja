@@ -6,10 +6,7 @@
 
 	verificaUsuario();
 ?>
-
-
-
-	<h1>Formulario de Cadastro</h1>
+<h1>Formulario de Cadastro</h1>
 	<form action ="adicionar-produto.php" method="POST">
 		<table class="table">
 			<?php 
