@@ -12,8 +12,8 @@
         
       $categoria = new Categoria();
       
-      $categoria->id = categoria_array['id'];
-      $categoria->nome = categoria_array['nome'];
+      $categoria->id = $categoria_array['id'];
+      $categoria->nome = $categoria_array['nome'];
         
 			array_push($categorias, $categoria);
 		}

@@ -1,6 +1,6 @@
 <?php 
 	require_once("conecta.php");
-  require_once("class/Produto.php")
+  require_once("class/Produto.php");
   require_once("class/Categoria.php");
 
 	// SELECIONAR PRODUTOS DO BANCO
@@ -20,12 +20,12 @@
       $produto->preco = $produtos_array["preco"];
       $produto->descricao = $produtos_array["descricao"];
       $produto->categoria = $categoria;
-      $produto->usado = $produto["usado"];
+      $produto->usado = $produtos_array["usado"];
       
       array_push($produtos, $produto);
 
 		}
-				return $produtos;
+		return $produtos;
 	}
 
 	// INSERIR PRODUTO NO BANCO 
