@@ -1,8 +1,7 @@
 	<?php
     require_once("cabecalho.php");
-    require_once("conecta.php");
 	require_once("banco-produto.php");
-    require_once("class/Produto.php");
+    
 	$produtos = listaProduto($conexao);
   ?>
 	<table class="table table-striped table-bordered">
