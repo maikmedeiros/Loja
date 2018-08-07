@@ -13,15 +13,15 @@
       
       
       $categoria = new Categoria();
-      $categoria->nome = $produtos_array["categoria_nome"];
+      $categoria->setNome($produtos_array["categoria_nome"]);
       
       $produto = new Produto();
-      $produto->id = $produtos_array["id"];
-      $produto->nome = $produtos_array["nome"];
-      $produto->preco = $produtos_array["preco"];
-      $produto->descricao = $produtos_array["descricao"];
-      $produto->categoria = $categoria;
-      $produto->usado = $produtos_array["usado"];
+      $produto->setId($produtos_array["id"]);
+      $produto->setNome($produtos_array["nome"]);
+      $produto->setPreco($produtos_array["preco"]);
+      $produto->setDescricao($produtos_array["descricao"]);
+      $produto->setCategoria($categoria);
+      $produto->setUsado($produtos_array["usado"]);
       
       array_push($produtos, $produto);
 
@@ -31,7 +31,7 @@
 
 	// INSERIR PRODUTO NO BANCO 
 	function insereProduto($conexao, Produto $produto){
-			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->nome}', {$produto->preco}, '{$produto->descricao}',{$produto->categoria->id},{$produto->usado})";
+			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}',{$produto->getCategoria()->getId()},{$produto->getUsado()})";
 			echo $query;
 			return  mysqli_query($conexao, $query);
 	}
@@ -51,24 +51,24 @@
 		$produto_buscado = mysqli_fetch_assoc($resultado);	
 		
    		$categoria = new Categoria();
-    	$categoria->id = $produto_buscado['categoria_id'];
+    	$categoria->setId($produto_buscado['categoria_id']);
     
     
     	$produto = new Produto();
     
-     	$produto->id = $produto_buscado["id"];
-      	$produto->nome = $produto_buscado["nome"];
-      	$produto->preco = $produto_buscado["preco"];
-      	$produto->descricao = $produto_buscado["descricao"];
-      	$produto->categoria = $categoria;
-      	$produto->usado = $produto_buscado["usado"];
+     	$produto->setId($produto_buscado["id"]);
+      	$produto->setNome($produto_buscado["nome"]);
+      	$produto->setPreco($produto_buscado["preco"]);
+      	$produto->setDescricao($produto_buscado["descricao"]);
+      	$produto->setCategoria($categoria);
+      	$produto->setUsado($produto_buscado["usado"]);
       
     	return $produto;
 	}
 
 	//UPDATE PRODUTOS
 	function alteraProdutos($conexao,Produto $produto){
-		$query = "update produtos set nome = '{$produto->nome}', preco = {$produto->preco}, descricao = '{$produto->descricao}', categoria_id = {$produto->categoria->id}, usado = {$produto->usado} where id = {$produto->id}";
+		$query = "update produtos set nome = '{$produto->getNome()}', preco = {$produto->getPreco()}, descricao = '{$produto->getDescricao()}', categoria_id = {$produto->getCategoria()->getId()}, usado = {$produto->getUsado()} where id = {$produto->getId()}";
 		echo $query;
 		return mysqli_query($conexao, $query);
 	}

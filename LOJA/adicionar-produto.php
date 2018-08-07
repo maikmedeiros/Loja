@@ -6,25 +6,28 @@
    <?php
 			
 			verificaUsuario();
-			
+
+			$categoria = new Categoria(); 
+			$categoria->setId($_POST["categoria_id"]);
+
 			$produto = new Produto();
 
-			$produto->nome = $_POST["nome"];
-			$produto->preco = $_POST["preco"];
-			$produto->descricao = $_POST["descricao"];
-			$produto->categoria->id = $_POST["categoria_id"];
+			$produto->setNome($_POST["nome"]);
+			$produto->setPreco($_POST["preco"]);
+			$produto->setDescricao($_POST["descricao"]);
+			$produto->setCategoria($categoria);
 			if(array_key_exists('usado', $_POST)) {
-	   			 $produto->usado = "true";
+	   			 $produto->setUsado("true");
 			} else {
-	  			 $produto->usado = "false";
+	  			 $produto->setUsado("false");
 			}
 		  
 			if (insereProduto($conexao, $produto)){ ?>
-				<p class="text-sucess">O produto <?= $produto->nome?> foi adicionado com sucesso e seu preço é <?= $produto->preco?>!!!</p>
+				<p class="text-sucess">O produto <?= $produto->getNome()?> foi adicionado com sucesso e seu preço é <?= $produto->getPreco()?>!!!</p>
 
 				<?php } else { 
 						$msg = mysqli_error($conexao);?>
-						<p class="text-danger"> O produto <?= $produto->nome?> não foi adicionado: <?=$msg?></p>
+						<p class="text-danger"> O produto <?= $produto->getNome()?> não foi adicionado: <?=$msg?></p>
 				<?php
 				}
 		?>
