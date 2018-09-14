@@ -3,6 +3,7 @@
         funcition carregaClasses($nomeDaClasse){
           require_once("class/".$nomeDaClasse.".php");
         }
+        spl_autoload_register("carregaClasse");
         require_once("mostra-alerta.php");
         error_reporting (E_ALL ^ E_NOTICE);
 ?>
