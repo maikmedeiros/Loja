@@ -1,7 +1,7 @@
 		<?php require_once("cabecalho.php"); ?>
 		<?php require_once("banco-produto.php");?>
 		<?php require_once("logica-usuario.php");?>
-   		<?php require_once("class/Produto.php"); ?>
+   	
 		
    <?php
 			

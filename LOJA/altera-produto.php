@@ -1,7 +1,7 @@
 <?php
 	require_once("cabecalho.php");
  	require_once("banco-produto.php");
-  	require_once("class/Produto.php");
+  
   
   	$categoria = new Categoria();
   	$categoria->setId($_POST['categoria_id']);
