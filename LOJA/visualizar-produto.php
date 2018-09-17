@@ -8,7 +8,7 @@
   ?>
 	<table class="table table-striped table-bordered">
 		<tr>
-				<td>Id</td>
+				<td>ID</td>
 				<td>Produto</td>
 				<td>Preço</td>
 				<td>Desconto</td>
