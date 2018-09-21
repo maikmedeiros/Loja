@@ -5,7 +5,7 @@
 
 
 	$id = $_GET['id'];
-	$produto = buscaProduto($conexao, $id);
+	$produto = $produtoDao->buscaProduto($id);
 	$categorias = listaCategorias($conexao);
 	
     $selecao_usado = $produto->getUsado() ? "checked='checked'" : "";

@@ -22,7 +22,7 @@
         $usado = "";
         include("produto-formulario-base.php")
       ?>
-			<tr>
+			    <tr>
             	<td><button class="btn btn-primary" type="submit">Cadastrar</button></td>
         	</tr>
 		</table>

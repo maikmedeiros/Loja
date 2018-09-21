@@ -6,7 +6,8 @@
   	$categoria = new Categoria();
   	$categoria->setId($_POST['categoria_id']);
 
-  	$produto = new Produto();
+   $produto = new Produto();
+   $produtoDAO = new ProdutoDAO($conexao);
 
 	$produto->setId($_POST['id']);
 	$produto->setNome($_POST['nome']);
@@ -19,7 +20,7 @@
 	    $produto->setUsado("false");
 	}
 
-	if(alteraProdutos($conexao,$produto)) { ?>
+	if($produtoDAO->alteraProdutos($produto)) { ?>
 	    <p class="text-success">O produto <?= $produto->getNome() ?>, <?= $produto->getPreco() ?> foi alterado.</p>
 	<?php } else {
 	    $msg = mysqli_error($conexao);

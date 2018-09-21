@@ -5,6 +5,7 @@
         }
         spl_autoload_register("carregaClasse");
         require_once("mostra-alerta.php");
+        require_once("conecta.php");
         error_reporting (E_ALL ^ E_NOTICE);
 ?>
 <html>

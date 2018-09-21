@@ -11,6 +11,7 @@
 			$categoria->setId($_POST["categoria_id"]);
 
 			$produto = new Produto();
+      $produtaDAO = new ProdutoDAO($conexao);      
 
 			$produto->setNome($_POST["nome"]);
 			$produto->setPreco($_POST["preco"]);
@@ -22,7 +23,7 @@
 	  			 $produto->setUsado("false");
 			}
 		  
-			if (insereProduto($conexao, $produto)){ ?>
+			if (produtoDAO->insereProduto($produto)){ ?>
 				<p class="text-sucess">O produto <?= $produto->getNome()?> foi adicionado com sucesso e seu preço é <?= $produto->getPreco()?>!!!</p>
 
 				<?php } else { 
