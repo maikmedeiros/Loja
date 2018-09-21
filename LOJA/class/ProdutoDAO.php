@@ -8,7 +8,7 @@
   }
 
 	// SELECIONAR PRODUTOS DO BANCO
-	function listaProduto($conexao){
+	function listaProduto(){
 		
     $produtos = array();
     

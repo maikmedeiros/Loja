@@ -1,10 +1,8 @@
 	<?php
-    require_once("cabecalho.php");
-	require_once("banco-produto.php");
+   require_once("cabecalho.php");
 
-
-    
-	$produtos = listaProduto($conexao);
+  $produtoDAO = new ProdutoDAO($conexao);
+	$produtos = $produtoDAO->listaProduto($conexao);
   ?>
 	<table class="table table-striped table-bordered">
 		<tr>
