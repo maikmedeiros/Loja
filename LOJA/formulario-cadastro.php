@@ -3,8 +3,9 @@
   require_once("banco-categoria.php");
 	require_once("logica-usuario.php");
 
-
-	$categorias = listaCategorias($conexao);
+  
+  $categoriaDAO = new categoriaDAO($conexao);
+	$categorias = $categoriaDAO->listaCategorias();
 
 	verificaUsuario();
 ?>
