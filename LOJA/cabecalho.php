@@ -1,9 +1,9 @@
 <?php
         
-        funcition carregaClasses($nomeDaClasse){
+        function carregaClasses($nomeDaClasse){
           require_once("class/".$nomeDaClasse.".php");
         }
-        spl_autoload_register("carregaClasse");
+        spl_autoload_register("carregaClasses");
         require_once("mostra-alerta.php");
         require_once("conecta.php");
         error_reporting (E_ALL ^ E_NOTICE);

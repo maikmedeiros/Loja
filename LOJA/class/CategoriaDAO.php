@@ -1,16 +1,16 @@
 <?php
-  class CategoriaDAO(){
+  class CategoriaDAO{
     
       private $conexao;
     
-      function __Construct($conexao)}{
-        this->conexao = $conexao;
+      function __Construct($conexao){
+        $this->conexao = $conexao;
   }
   function listaCategorias(){
 
 		$categorias = array();
 		$query = "select * from categorias";
-		$resultado = mysqli_query ($conexao, $query);
+		$resultado = mysqli_query($conexao, $query);
     
 		while ($categoria_array = mysqli_fetch_assoc($resultado)){
         

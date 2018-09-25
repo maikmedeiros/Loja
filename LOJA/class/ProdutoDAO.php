@@ -1,10 +1,10 @@
 <?php
-  class ProdutoDAO(){
+  class ProdutoDAO{
     
       private $conexao;
      
   function __contruct($conexao){
-      this->conexao = $conexao;
+      $this->conexao = $conexao;
   }
 
 	// SELECIONAR PRODUTOS DO BANCO
@@ -12,9 +12,9 @@
 		
     $produtos = array();
     
-	  $resultado = mysqli_query ("select pp.*, cc.nome as categoria_nome from produtos as pp join categorias as cc on pp.categoria_id = cc.id");
+	  $resultado = mysqli_query($this->conexao,"select pp.*, cc.nome as categoria_nome from produtos as pp join categorias as cc on pp.categoria_id = cc.id");
 	  while($produtos_array = mysqli_fetch_assoc($resultado)){
-      
+
       
       $categoria = new Categoria();
       $categoria->setNome($produtos_array["categoria_nome"]);
@@ -37,21 +37,21 @@
 	function insereProduto(Produto $produto){
 			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}',{$produto->getCategoria()->getId()},{$produto->getUsado()})";
 			echo $query;
-			return  mysqli_query(this->conexao, $query);
+			return  mysqli_query($this->conexao, $query);
 	}
 
 	//DELETAR PRODUTO 
 	function removeProduto($id){
 
 		$query = "delete from produtos where id = {$id}";
-		return mysqli_query(this->conexao, $query);
+		return mysqli_query($this->conexao, $query);
 	}
 
 	// SELECIO OS PRODUTOS PARA ALTERALOS
 	function buscaProduto($id){
 		
 		$query = "select * from produtos where id = {$id}";
-    $resultado = mysqli_query(this->conexao, $query);
+    $resultado = mysqli_query($this->conexao, $query);
 		$produto_buscado = mysqli_fetch_assoc($resultado);	
 		
    		$categoria = new Categoria();
@@ -74,7 +74,7 @@
 	function alteraProdutos(Produto $produto){
 		$query = "update produtos set nome = '{$produto->getNome()}', preco = {$produto->getPreco()}, descricao = '{$produto->getDescricao()}', categoria_id = {$produto->getCategoria()->getId()}, usado = {$produto->getUsado()} where id = {$produto->getId()}";
 		echo $query;
-		return mysqli_query(this->conexao, $query);
+		return mysqli_query($this->conexao, $query);
 	}
 
     

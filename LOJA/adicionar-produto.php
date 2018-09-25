@@ -2,7 +2,7 @@
 		<?php require_once("logica-usuario.php");?>
    	
 		
-   <?php
+   		<?php
 			
 			verificaUsuario();
 
@@ -10,7 +10,7 @@
 			$categoria->setId($_POST["categoria_id"]);
 
 			$produto = new Produto();
-      $produtaDAO = new ProdutoDAO($conexao);      
+      		$produtaDAO = new ProdutoDAO($conexao);      
 
 			$produto->setNome($_POST["nome"]);
 			$produto->setPreco($_POST["preco"]);
@@ -22,7 +22,7 @@
 	  			 $produto->setUsado("false");
 			}
 		  
-			if (produtoDAO->insereProduto($produto)){ ?>
+			if ($produtoDAO->insereProduto($produto)){ ?>
 				<p class="text-sucess">O produto <?= $produto->getNome()?> foi adicionado com sucesso e seu preço é <?= $produto->getPreco()?>!!!</p>
 
 				<?php } else { 

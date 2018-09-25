@@ -1,9 +1,9 @@
 	<?php
    require_once("cabecalho.php");
 
-  $produtoDAO = new ProdutoDAO($conexao);
-	$produtos = $produtoDAO->listaProduto($conexao);
-  ?>
+  	$produtoDAO = new ProdutoDAO($conexao);
+	$produtos = $produtoDAO->listaProduto();
+ 	?>
 	<table class="table table-striped table-bordered">
 		<tr>
 				<td>ID</td>
