@@ -1,11 +1,13 @@
 <?php
+
   class ProdutoDAO{
     
       private $conexao;
      
-  function __contruct($conexao){
-      $this->conexao = $conexao;
-  }
+	  function __construct($conexao){
+	      $this->conexao = $conexao;
+	  }
+
 
 	// SELECIONAR PRODUTOS DO BANCO
 	function listaProduto(){
@@ -13,6 +15,7 @@
     $produtos = array();
     
 	  $resultado = mysqli_query($this->conexao,"select pp.*, cc.nome as categoria_nome from produtos as pp join categorias as cc on pp.categoria_id = cc.id");
+	 
 	  while($produtos_array = mysqli_fetch_assoc($resultado)){
 
       
@@ -20,12 +23,12 @@
       $categoria->setNome($produtos_array["categoria_nome"]);
       
       $produto = new Produto();
-      $produto->setId($produtos_array["id"]);
-      $produto->setNome($produtos_array["nome"]);
-      $produto->setPreco($produtos_array["preco"]);
-      $produto->setDescricao($produtos_array["descricao"]);
+      $produto->setId($produtos_array['id']);
+      $produto->setNome($produtos_array['nome']);
+      $produto->setPreco($produtos_array['preco']);
+      $produto->setDescricao($produtos_array['descricao']);
       $produto->setCategoria($categoria);
-      $produto->setUsado($produtos_array["usado"]);
+      $produto->setUsado($produtos_array['usado']);
       
       array_push($produtos, $produto);
 
@@ -51,7 +54,7 @@
 	function buscaProduto($id){
 		
 		$query = "select * from produtos where id = {$id}";
-    $resultado = mysqli_query($this->conexao, $query);
+    	$resultado = mysqli_query($this->conexao, $query);
 		$produto_buscado = mysqli_fetch_assoc($resultado);	
 		
    		$categoria = new Categoria();

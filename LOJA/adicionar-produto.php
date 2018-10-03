@@ -8,9 +8,9 @@
 
 			$categoria = new Categoria(); 
 			$categoria->setId($_POST["categoria_id"]);
-
+			
 			$produto = new Produto();
-      		$produtaDAO = new ProdutoDAO($conexao);      
+      		$produtaDAO = new ProdutoDAO($conexao);  	
 
 			$produto->setNome($_POST["nome"]);
 			$produto->setPreco($_POST["preco"]);
@@ -21,7 +21,8 @@
 			} else {
 	  			 $produto->setUsado("false");
 			}
-		  
+			var_dump($produto);
+			
 			if ($produtoDAO->insereProduto($produto)){ ?>
 				<p class="text-sucess">O produto <?= $produto->getNome()?> foi adicionado com sucesso e seu preço é <?= $produto->getPreco()?>!!!</p>
 

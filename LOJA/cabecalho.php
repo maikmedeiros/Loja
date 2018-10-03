@@ -1,13 +1,15 @@
 <?php
-        
+        require_once("mostra-alerta.php");
+        require_once("conecta.php");
+        error_reporting (E_ALL ^ E_NOTICE);
+
         function carregaClasses($nomeDaClasse){
           require_once("class/".$nomeDaClasse.".php");
         }
         spl_autoload_register("carregaClasses");
-        require_once("mostra-alerta.php");
-        require_once("conecta.php");
-        error_reporting (E_ALL ^ E_NOTICE);
 ?>
+
+
 <html>
 	<head>
 		<title>Minha Loja</title>
