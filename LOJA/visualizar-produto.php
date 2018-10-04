@@ -1,5 +1,5 @@
 	<?php
-   require_once("cabecalho.php");
+   	require_once("cabecalho.php");
 
   	$produtoDAO = new ProdutoDAO($conexao);
 	$produtos = $produtoDAO->listaProduto();

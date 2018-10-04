@@ -3,7 +3,7 @@
 	require_once("logica-usuario.php");
 
   
-  $categoriaDAO = new CategoriaDAO($conexao);
+  	$categoriaDAO = new CategoriaDAO($conexao);
 	$categorias = $categoriaDAO->listaCategorias();
 
 	verificaUsuario();
@@ -12,17 +12,17 @@
 	<form action ="adicionar-produto.php" method="POST">
 		<table class="table">
 			<?php 
-        
-        $categoria = new Categoria();
-        $categoria->setId(1);
+			
+				$categoria = new Categoria();
+				$categoria->setId(1);
 
-        $produto = new Produto();
-        $produto->setCategoria($categoria);
-        
-        $usado = "";
-        include("produto-formulario-base.php")
-      ?>
-			    <tr>
+				$produto = new Produto();
+				$produto->setCategoria($categoria);
+				
+				$usado = "";
+				include("produto-formulario-base.php")
+			?>
+			<tr>
             	<td><button class="btn btn-primary" type="submit">Cadastrar</button></td>
         	</tr>
 		</table>

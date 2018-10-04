@@ -1,16 +1,16 @@
-		<?php require_once("cabecalho.php"); ?>
-		<?php require_once("logica-usuario.php");?>
-   	
-		
+		<?php 
+			require_once("cabecalho.php"); 
+			require_once("logica-usuario.php");
+		?>
    		<?php
 			
 			verificaUsuario();
+			$produtoDAO = new ProdutoDAO($conexao);
 
 			$categoria = new Categoria(); 
 			$categoria->setId($_POST["categoria_id"]);
 			
-			$produto = new Produto();
-      		$produtaDAO = new ProdutoDAO($conexao);  	
+			$produto = new Produto();  	
 
 			$produto->setNome($_POST["nome"]);
 			$produto->setPreco($_POST["preco"]);
@@ -21,15 +21,18 @@
 			} else {
 	  			 $produto->setUsado("false");
 			}
-			var_dump($produto);
 			
-			if ($produtoDAO->insereProduto($produto)){ ?>
+			if ($produtoDAO->insereProduto($produto)){
+
+		?>
+				
 				<p class="text-sucess">O produto <?= $produto->getNome()?> foi adicionado com sucesso e seu preço é <?= $produto->getPreco()?>!!!</p>
 
 				<?php } else { 
-						$msg = mysqli_error($conexao);?>
+						$msg = mysqli_error($conexao);
+				?>
 						<p class="text-danger"> O produto <?= $produto->getNome()?> não foi adicionado: <?=$msg?></p>
 				<?php
 				}
-		?>
+				?>
 	<?php include("rodape.php"); ?>
