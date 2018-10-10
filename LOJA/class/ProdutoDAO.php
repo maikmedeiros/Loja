@@ -28,7 +28,9 @@
       $produto->setPreco($produtos_array['preco']);
       $produto->setDescricao($produtos_array['descricao']);
       $produto->setCategoria($categoria);
-      $produto->setUsado($produtos_array['usado']);
+	  $produto->setUsado($produtos_array['usado']);
+	  $produto->setPlaca($produtos_array["placa"]);
+	  $produto->setTipoVeiculo($produtos_array["tipoVeiculo"]); 
       
       array_push($produtos, $produto);
 
@@ -38,7 +40,7 @@
 
 	// INSERIR PRODUTO NO BANCO 
 	function insereProduto(Produto $produto){
-			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}',{$produto->getCategoria()->getId()},{$produto->getUsado()})";
+			$query = "insert into PRODUTOS (nome, preco, descricao, categoria_id, usado, placa, tipoVeiculo) values ('{$produto->getNome()}', {$produto->getPreco()}, '{$produto->getDescricao()}',{$produto->getCategoria()->getId()},{$produto->getUsado()},'{$produto->getPlaca()}','{$produto->getTipoVeiculo()}')";
 			echo $query;
 			return  mysqli_query($this->conexao, $query);
 	}
@@ -50,7 +52,7 @@
 		return mysqli_query($this->conexao, $query);
 	}
 
-	// SELECIO OS PRODUTOS PARA ALTERALOS
+	// SELECIOBAR OS PRODUTOS PARA ALTERALOS
 	function buscaProduto($id){
 		
 		$query = "select * from produtos where id = {$id}";
@@ -68,7 +70,9 @@
       	$produto->setPreco($produto_buscado["preco"]);
       	$produto->setDescricao($produto_buscado["descricao"]);
       	$produto->setCategoria($categoria);
-      	$produto->setUsado($produto_buscado["usado"]);
+		$produto->setUsado($produto_buscado["usado"]);
+		$produto->setPlaca($produto_buscado["placa"]);
+		$produto->setTipoVeiculo($produto_buscado["tipoVeiculo"]); 
       
     	return $produto;
 	}

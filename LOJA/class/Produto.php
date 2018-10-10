@@ -6,7 +6,9 @@
 	    private $preco;
 	    private $descricao;
 	    private $categoria;
-	    private $usado;
+		private $usado;
+		private $placa;
+		private $tipoVeiculo;
 	    //Função - Para aplicar desconto
 	    public function desconto($valor){
 	    	if ($valor > 0 && $valor <= 0.5){
@@ -62,6 +64,23 @@
 		public function setUsado($usado){
 			$this->usado = $usado;
 		}
+
+		public function getPlaca(){
+			return $this->placa;
+		}
+
+		public function setPlaca($placa){
+			$this->placa = $placa;
+		}
+
+		public function getTipoVeiculo(){
+			return $this->tipoVeiculo;
+		}
+
+		public function setTipoVeiculo($tipoVeiculo){
+			$this->tipoVeiculo = $tipoVeiculo;
+		}
+
 	}
 
 ?>

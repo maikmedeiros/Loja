@@ -15,6 +15,8 @@
 			$produto->setNome($_POST["nome"]);
 			$produto->setPreco($_POST["preco"]);
 			$produto->setDescricao($_POST["descricao"]);
+			$produto->setPlaca($_POST["placa"]);
+			$produto->setTipoVeiculo($_POST["tipoVeiculo"]);
 			$produto->setCategoria($categoria);
 			if(array_key_exists('usado', $_POST)) {
 	   			 $produto->setUsado("true");
